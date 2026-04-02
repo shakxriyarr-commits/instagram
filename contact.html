@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bog'lanish | Shahriyor Allaberganov</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg: #000000;
+            --accent: #00d2ff;
+            --text: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.03);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 0%, #001220 0%, #000 80%);
+            z-index: -1;
+        }
+
+        /* Navigatsiya */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            backdrop-filter: blur(15px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .logo { font-size: 1.4rem; font-weight: 700; text-decoration: none; color: var(--accent); }
+
+        .nav-links { display: flex; gap: 20px; list-style: none; }
+        .nav-links a { text-decoration: none; color: #fff; opacity: 0.7; font-size: 0.9rem; transition: 0.3s; }
+        .nav-links a:hover { opacity: 1; color: var(--accent); }
+
+        /* Contact Section */
+        .contact-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 5%;
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            width: 100%;
+            max-width: 550px;
+            padding: 40px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .contact-card h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #fff, var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .contact-card p {
+            color: #888;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        /* Form elementlari */
+        .input-group {
+            position: relative;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 15px;
+            top: 18px;
+            color: var(--accent);
+            opacity: 0.6;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 15px 15px 15px 45px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: #fff;
+            outline: none;
+            transition: 0.3s;
+            font-size: 1rem;
+        }
+
+        input:focus, textarea:focus {
+            border-color: var(--accent);
+            background: rgba(0, 210, 255, 0.02);
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.1);
+        }
+
+        .send-btn {
+            width: 100%;
+            padding: 18px;
+            background: var(--accent);
+            color: #000;
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .send-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 210, 255, 0.3);
+        }
+
+        #status {
+            margin-top: 20px;
+            font-weight: 500;
+            min-height: 24px;
+        }
+
+        /* Ijtimoiy tarmoqlar */
+        .social-links {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: #fff;
+            font-size: 1.5rem;
+            opacity: 0.5;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover {
+            opacity: 1;
+            color: var(--accent);
+            transform: scale(1.2);
+        }
+
+        /* --- MOBILE --- */
+        @media screen and (max-width: 480px) {
+            .contact-card { padding: 30px 20px; }
+            .contact-card h1 { font-size: 1.8rem; }
+            nav { padding: 15px 5%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow"></div>
+
+    <nav>
+        <a href="index.html" class="logo">SHAHRIYOR</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Asosiy</a></li>
+        </ul>
+    </nav>
+
+    <main class="contact-container">
+        <div class="contact-card">
+            <h1>Bog'lanish</h1>
+            <p>Loyihangizni muhokama qilamizmi? Xabar yuboring!</p>
+
+            <form id="contactPageForm">
+                <div class="input-group">
+                    <i class="fas fa-user"></i>
+                    <input type="text" id="name" placeholder="Ismingiz" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-paper-plane"></i>
+                    <input type="text" id="contact" placeholder="Telegram yoki Telefon" required>
+                </div>
+
+                <div class="input-group">
+                    <i class="fas fa-comment-dots"></i>
+                    <textarea id="msg" rows="5" placeholder="Xabaringiz..." required></textarea>
+                </div>
+
+                <button type="submit" class="send-btn">
+                    Yuborish <i class="fas fa-arrow-right" style="margin-left: 8px;"></i>
+                </button>
+            </form>
+
+            <div id="status"></div>
+
+            <div class="social-links">
+                <a href="https://t.me/shakxriyar"><i class="fab fa-telegram"></i></a>
+                <a href="https://www.instagram.com/shakxriyarr"><i class="fab fa-instagram"></i></a>
+                <a href="https://github.com/shakxriyarr-commits"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </main>
+
+   <script>
+    const TOKEN = "8355674438:AAHeX0scFb1aaLplYxUE3cUSeCTh8VB_PUc"; 
+    const CHAT_ID = "6457425447";
+
+    document.getElementById('contactPageForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const status = document.getElementById('status');
+        const btn = document.querySelector('.send-btn');
+        
+        // Ma'lumotlarni olish
+        const name = document.getElementById('name').value;
+        const contact = document.getElementById('contact').value;
+        const msg = document.getElementById('msg').value;
+
+        // Xabarni shakllantirish (encodeURIComponent ishlatish xavfsizroq)
+        const text = `📩 *Contact Sahifasidan xabar!*\n\n👤 *Ism:* ${name}\n📞 *Aloqa:* ${contact}\n💬 *Xabar:* ${msg}`;
+        const url = `https://api.telegram.org/bot${TOKEN}/sendMessage`;
+
+        status.innerText = "Yuborilmoqda...";
+        status.style.color = "#888";
+        btn.disabled = true;
+
+        // POST so'rovi orqali yuborish (xavfsiz va ishonchli usul)
+        fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                chat_id: CHAT_ID,
+                text: text,
+                parse_mode: 'Markdown'
+            })
+        })
+        .then(res => {
+            if(res.ok) {
+                status.innerText = "Muvaffaqiyatli yuborildi! ✅";
+                status.style.color = "#00d2ff"; // CSS o'zgaruvchisi o'rniga rang kodi
+                this.reset();
+            } else {
+                status.innerText = "Xatolik yuz berdi. ❌";
+                status.style.color = "#ff4d4d";
+            }
+        })
+        .catch(() => {
+            status.innerText = "Internetda xatolik! ❌";
+            status.style.color = "#ff4d4d";
+        })
+        .finally(() => {
+            btn.disabled = false;
+        });
+    });
+</script>
+</body>
+</html>

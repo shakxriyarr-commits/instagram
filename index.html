@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shahriyor Allaberganov | Portfolio</title>
+    
+
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="./photo_2026-04-02_22-07-35.jpg">
+
+    <style>
+        :root {
+            --bg: #000000;
+            --accent: #00d2ff;
+            --text: #ffffff;
+            --card-bg: rgba(255, 255, 255, 0.02);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Space Grotesk', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        .glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% -10%, #001220 0%, #000 80%);
+            z-index: -1;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            backdrop-filter: blur(15px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .logo { font-size: 1.4rem; font-weight: 700; color: var(--accent); text-decoration: none; }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #fff;
+            opacity: 0.7;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { opacity: 1; color: var(--accent); }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .burger div { width: 25px; height: 2px; background: #fff; transition: 0.3s; }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+        }
+
+        .profile-img {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.4);
+            margin-bottom: 25px;
+        }
+
+        .hero h1 { font-size: clamp(2rem, 8vw, 3.5rem); margin-bottom: 15px; }
+        .hero p { font-size: 1.1rem; color: #aaa; max-width: 750px; line-height: 1.6; margin-bottom: 30px; }
+
+        /* Bog'lanish tugmasi (Contact sahifasiga o'tish uchun) */
+        .cta-btn {
+            padding: 15px 35px;
+            background: var(--accent);
+            color: #000;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 700;
+            transition: 0.3s;
+            display: inline-block;
+        }
+
+        .cta-btn:hover {
+            box-shadow: 0 0 25px var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* Nimalar qilaman? */
+        .container { padding: 80px 8%; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 40px;
+            transition: 0.4s ease;
+            text-align: center;
+        }
+
+        .card:hover { transform: translateY(-10px); border-color: var(--accent); }
+        .card i { font-size: 2.5rem; color: var(--accent); margin-bottom: 20px; }
+
+        footer { text-align: center; padding: 50px; opacity: 0.4; font-size: 0.8rem; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                right: -100%;
+                top: 70px;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.95);
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                padding-top: 50px;
+                transition: 0.5s;
+                backdrop-filter: blur(20px);
+            }
+            .nav-links.active { right: 0; }
+            .burger { display: flex; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glow"></div>
+
+    <nav>
+        <a href="#home" class="logo">SHAHRIYOR</a>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#work">Portfolio</a></li>
+        </ul>
+        <div class="burger" onclick="toggleMenu()">
+            <div></div><div></div><div></div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <img src="./photo_2026-04-02_22-07-35.jpg" alt="Shahriyor Allaberganov" class="profile-img">
+        <h1><span>Shahriyor</span> Allaberganov</h1>
+        <p>
+            Assalomu alaykum! Men Shahriyor Allaberganov, professional Telegram bot va saytlar asoschisiman. 
+            Yoshim 14 da. Mening ustozim, <b>Abror Bektemirov</b>, 3 yildan ortiq tajribaga ega professional dasturchi. 
+        </p>
+        <a href="contact.html" class="cta-btn">Men bilan bog'lanish</a>
+    </section>
+
+    <section id="work" class="container">
+        <h2 style="text-align: center; font-size: 2.5rem;">Nimalar qilaman?</h2>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-code"></i>
+                <h3>Veb Saytlar</h3>
+                <p>Zamonaviy, tezkor va barcha qurilmalarga ideal moslashadigan veb-saytlar yaratish.</p>
+            </div>
+            <div class="card">
+                <i class="fab fa-telegram-plane"></i>
+                <h3>Telegram Botlar</h3>
+                <p>Har qanday murakkablikdagi, to'lov tizimli va avtomatlashtirilgan aqlli botlar.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-paint-brush"></i>
+                <h3>UI/UX Dizayn</h3>
+                <p>Foydalanuvchilar uchun qulay va mukammal bo'lgan interfeyslarni loyihalash.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Shahriyor Allaberganov | Barcha huquqlar himoyalangan.
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('.nav-links');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
